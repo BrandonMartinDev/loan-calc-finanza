@@ -1,0 +1,97 @@
+.calculation-output-container {
+
+    width: 100%;
+
+    padding: 2.5em;
+    padding-right: 0;
+
+}
+
+@media (max-width: 1250px) {
+    .calculation-output-container {
+        margin: 0 auto;
+        margin-top: 5em;
+        padding: 0;
+    }
+}
+
+
+.monthly-payment-container,
+.calculation-cost-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* .monthly-payment-container {
+    margin-bottom: 1.5em;
+} */
+
+.monthly-payment-title,
+.monthly-payment-number {
+
+    font-size: 2.5rem;
+    font-family: var(--main-ff);
+
+}
+
+.monthly-payment-title {
+    font-weight: 300;
+    color: var(--color-gray-500);
+}
+
+.monthly-payment-number {
+    color: var(--color-accent)
+}
+
+@media (max-width: 620px) {
+
+    .monthly-payment-title,
+    .monthly-payment-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .monthly-payment-title,
+    .monthly-payment-number {
+        font-size: 1.75rem;
+    }
+}
+
+
+
+.calculation-costs-container {
+
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--color-gray-300);
+
+}
+
+.calculation-cost-line {
+    font-size: 1.25rem;
+    color: var(--color-gray-500);
+    font-weight: 300;
+}
+
+.total-cost-number {
+    color: var(--color-secondary)
+}
+
+.addition-text {
+    color: red;
+}
+
+.subtraction-text {
+    color: green;
+}
+
+@media (max-width: 620px) {
+    .calculation-cost-line {
+        font-size: 1rem;
+    }
+}

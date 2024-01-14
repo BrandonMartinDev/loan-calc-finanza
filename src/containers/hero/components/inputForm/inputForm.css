@@ -1,0 +1,95 @@
+.loan-info-input {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: .75em;
+    width: 30em;
+
+    padding: 2.5em;
+    padding-left: 0;
+    border-right: var(--color-gray-300) 1px solid;
+
+}
+
+@media (max-width: 1250px) {
+    .loan-info-input {
+        border: none;
+        padding: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    .loan-info-input {
+        width: 100%;
+    }
+}
+
+
+
+.double-form-input {
+    display: flex;
+    column-gap: .75em;
+}
+
+
+
+.down-payment-form-input {
+    display: flex;
+    column-gap: 1em;
+}
+
+.down-payment-button {
+
+    width: 6rem;
+    border-radius: 6px;
+
+    border: var(--color-gray-300) 1px solid;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition: all var(--hover-transition-time);
+
+}
+
+.down-payment-button:hover,
+.selected-down-payment-button {
+    background-color: var(--color-gray-500);
+    color: white;
+}
+
+
+
+.calculate-button-container {
+    display: flex;
+    justify-content: right;
+}
+
+.calculate-button {
+
+    background-color: var(--color-gray-500);
+    color: white;
+
+    padding: .5em .75em;
+    border-radius: 6px;
+    width: 33%;
+
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-family: var(--secondary-ff);
+
+    cursor: pointer;
+
+    transition: all var(--hover-transition-time);
+
+}
+
+.calculate-button:hover {
+    background-color: var(--color-gray-300);
+}
+
+@media (max-width: 420px) {
+    .calculate-button {
+        width: 50%;
+    }
+}
