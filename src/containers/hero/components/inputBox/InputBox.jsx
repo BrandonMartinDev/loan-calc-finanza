@@ -1,12 +1,6 @@
-import { useContext } from 'react';
-import { useLoanCalculatorContext } from '../../../../hooks/useLoanCalculatorContext'
 import './inputBox.css'
 
-const InputBox = ({ labelText, type }) => {
-
-    const { LoanCalculatorContext } = useLoanCalculatorContext();
-    const { LoanCalc, changeLoanCalcProp } = useContext(LoanCalculatorContext);
-
+const InputBox = ({ labelText, type, changeFormInputValue, value }) => {
 
     return (
 
@@ -16,8 +10,8 @@ const InputBox = ({ labelText, type }) => {
                 type='number'
                 required
                 step="any"
-                onChange={e => changeLoanCalcProp(type, e.target.value)}
-                value={type === "SET_DOWN_PAYMENT" ? LoanCalc.downPaymentPercentage : undefined}
+                onChange={e => changeFormInputValue(type, e.target.value)}
+                value={type === "SET_FORM_DOWN_PAYMENT" ? value : undefined}
             />
 
             <span className="input-label">{labelText}</span>

@@ -98,7 +98,7 @@ class LoanCalculator {
     get displayCalculatedTotalLoanPaymentMinusDownPayment() {
         return this.calculatedTotalLoanPaymentMinusDownPayment.toLocaleString(undefined, { style: "currency", currency: "USD" })
     }
-    
+
     get amortizationSchedule() {
 
         const monthlyPayment = this.calculatedMonthlyPayment || 0;
@@ -150,10 +150,10 @@ export function useLoanCalculator() {
             downPaymentPercentage
         },
 
-        dispatch
+        loanDispatch
 
     ] = useReducer((existingState, action) => {
-
+        
         switch (action.type) {
             case "SET_PRINCIPAL":
                 return { ...existingState, principal: action.payload };
@@ -170,11 +170,11 @@ export function useLoanCalculator() {
     }, defaultValuesObject)
 
     function changeLoanCalcProp(type, payload) {
-        dispatch({ type: type, payload: payload })
+        loanDispatch({ type: type, payload: payload })
     }
 
     const LoanCalc = new LoanCalculator(principal, termYears, termMonths, interestRatePercentage, downPaymentPercentage);
 
-    return [LoanCalc, changeLoanCalcProp];
+    return [LoanCalc, changeLoanCalcProp, loanDispatch];
 
 }

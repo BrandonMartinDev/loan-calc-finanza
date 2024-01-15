@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useReducer } from 'react'
 import './inputForm.css'
 
 import { useLoanCalculatorContext } from '../../../../hooks/useLoanCalculatorContext';
@@ -8,49 +8,107 @@ import { InputBox } from '../componentExports'
 const InputForm = () => {
 
     const { LoanCalculatorContext } = useLoanCalculatorContext();
-    const { LoanCalc, changeLoanCalcProp } = useContext(LoanCalculatorContext);
+    const { loanDispatch, changeLoanCalcProp } = useContext(LoanCalculatorContext);
+
+    const [
+
+        {
+            principal,
+            termYears,
+            termMonths,
+            interestRatePercentage,
+            downPaymentPercentage
+        },
+
+        formDispatch
+
+    ] = useReducer((existingState, action) => {
+
+        switch (action.type) {
+            case "SET_FORM_PRINCIPAL":
+                return { ...existingState, principal: action.payload };
+            case "SET_FORM_TERM_YEARS":
+                return { ...existingState, termYears: action.payload };
+            case "SET_FORM_TERM_MONTHS":
+                return { ...existingState, termMonths: action.payload };
+            case "SET_FORM_INTEREST_RATE":
+                return { ...existingState, interestRatePercentage: action.payload };
+            case "SET_FORM_DOWN_PAYMENT":
+                return { ...existingState, downPaymentPercentage: action.payload };
+        }
+
+    }, {
+        principal: 0,
+        termYears: 0,
+        termMonths: 0,
+        interestRatePercentage: 0,
+        downPaymentPercentage: 0
+    })
+
+    function changeFormInputValue(type, payload) {
+
+        formDispatch({ type: type, payload: payload })
+
+    }
+
+    function handleSubmit(e) {
+
+        e.preventDefault();
+
+        changeLoanCalcProp("SET_PRINCIPAL", principal);
+        changeLoanCalcProp("SET_TERM_YEARS", termYears);
+        changeLoanCalcProp("SET_TERM_MONTHS", termMonths);
+        changeLoanCalcProp("SET_INTEREST_RATE", interestRatePercentage);
+        changeLoanCalcProp("SET_DOWN_PAYMENT", downPaymentPercentage);
+
+    }
 
     return (
-        <form className='loan-info-input'>
+        <form className='loan-info-input' onSubmit={handleSubmit}>
 
             <InputBox
                 labelText="Loan Amount"
-                type="SET_PRINCIPAL"
+                type="SET_FORM_PRINCIPAL"
+                changeFormInputValue={changeFormInputValue}
             />
 
             <div className="double-form-input">
 
                 <InputBox
                     labelText="Term (Years)"
-                    type="SET_TERM_YEARS"
+                    type="SET_FORM_TERM_YEARS"
+                    changeFormInputValue={changeFormInputValue}
                 />
 
                 <InputBox
                     labelText="Term (Months)"
-                    type="SET_TERM_MONTHS"
+                    type="SET_FORM_TERM_MONTHS"
+                    changeFormInputValue={changeFormInputValue}
                 />
 
             </div>
 
             <InputBox
                 labelText='Interest Rate (%)'
-                type="SET_INTEREST_RATE"
+                type="SET_FORM_INTEREST_RATE"
+                changeFormInputValue={changeFormInputValue}
             />
 
             <div className="down-payment-form-input">
 
                 <InputBox
                     labelText='Down Payment (%)'
-                    type="SET_DOWN_PAYMENT"
-                    value={LoanCalc.downPaymentPercentage}
+                    type="SET_FORM_DOWN_PAYMENT"
+                    changeFormInputValue={changeFormInputValue}
+                    value={downPaymentPercentage}
                 />
 
                 <button
 
                     type="button"
-                    className={`down-payment-button ${LoanCalc.downPaymentPercentage === 0 ? "selected-down-payment-button" : null}`}
+                    className={`down-payment-button ${downPaymentPercentage === 0 ? "selected-down-payment-button" : null}`}
                     onClick={() => {
-                        changeLoanCalcProp("SET_DOWN_PAYMENT", 0)
+                        changeFormInputValue("SET_FORM_DOWN_PAYMENT", 0)
                     }}
 
                 >0%</button>
@@ -58,9 +116,9 @@ const InputForm = () => {
                 <button
 
                     type="button"
-                    className={`down-payment-button ${LoanCalc.downPaymentPercentage === 10 ? "selected-down-payment-button" : null}`}
+                    className={`down-payment-button ${downPaymentPercentage === 10 ? "selected-down-payment-button" : null}`}
                     onClick={() => {
-                        changeLoanCalcProp("SET_DOWN_PAYMENT", 10)
+                        changeFormInputValue("SET_FORM_DOWN_PAYMENT", 10)
                     }}
 
                 >10%</button>
@@ -68,9 +126,9 @@ const InputForm = () => {
                 <button
 
                     type="button"
-                    className={`down-payment-button ${LoanCalc.downPaymentPercentage === 15 ? "selected-down-payment-button" : null}`}
+                    className={`down-payment-button ${downPaymentPercentage === 15 ? "selected-down-payment-button" : null}`}
                     onClick={() => {
-                        changeLoanCalcProp("SET_DOWN_PAYMENT", 15)
+                        changeFormInputValue("SET_FORM_DOWN_PAYMENT", 15)
                     }}
 
                 >15%</button>
@@ -78,21 +136,21 @@ const InputForm = () => {
                 <button
 
                     type="button"
-                    className={`down-payment-button ${LoanCalc.downPaymentPercentage === 20 ? "selected-down-payment-button" : null}`}
+                    className={`down-payment-button ${downPaymentPercentage === 20 ? "selected-down-payment-button" : null}`}
                     onClick={() => {
-                        changeLoanCalcProp("SET_DOWN_PAYMENT", 20)
+                        changeFormInputValue("SET_FORM_DOWN_PAYMENT", 20)
                     }}
 
                 >20%</button>
 
             </div>
 
-            {/* <div className="calculate-button-container">
+            <div className="calculate-button-container">
                 <button
                     type='submit'
                     className='calculate-button'
                 >Calculate</button>
-            </div> */}
+            </div>
 
         </form>
     )
