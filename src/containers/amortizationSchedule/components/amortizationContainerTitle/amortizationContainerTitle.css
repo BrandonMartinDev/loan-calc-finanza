@@ -1,0 +1,67 @@
+.amortization-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.amortization-title {
+
+    font-size: 2rem;
+    font-family: var(--main-ff);
+    font-weight: 300;
+    color: var(--color-gray-500)
+
+}
+
+@media (max-width: 620px) {
+
+    .amortization-title {
+        font-size: 1.75rem;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .amortization-title {
+        font-size: 1.5rem;
+    }
+
+}
+
+.hide-schedule-button {
+
+    background-color: transparent;
+    color: var(--color-gray-500);
+    border: 1px solid var(--color-gray-500);
+
+    padding: .5em 2em;
+    border-radius: 6px;
+
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-family: var(--secondary-ff);
+
+    cursor: pointer;
+
+    transition: all var(--hover-transition-time);
+
+}
+
+.hide-schedule-button:hover {
+    background-color: var(--color-gray-500);
+    color: white;
+}
+
+.schedule-button-show {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.schedule-button-show:hover {
+    background-color: var(--color-accent);
+    color: white;
+}

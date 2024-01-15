@@ -15,6 +15,12 @@
     }
 }
 
+@media (max-width: 850px) {
+    .calculation-output-container {
+        margin-top: 2.5em;
+    }
+}
+
 
 .monthly-payment-container,
 .calculation-cost-line {
