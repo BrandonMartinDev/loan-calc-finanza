@@ -15,10 +15,19 @@
 .hero-main {
     display: flex;
     align-items: center;
+    margin: 3em auto !important;
 }
 
 @media (max-width: 1250px) {
     .hero-main {
         flex-direction: column;
+        margin: 5em auto !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .hero-main {
+        margin: 0 auto !important;
+        margin-bottom: 5em !important;
     }
 }

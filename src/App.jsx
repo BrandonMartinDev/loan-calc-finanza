@@ -1,6 +1,6 @@
 import { useLoanCalculatorContext } from './hooks/useLoanCalculatorContext'
 
-import { Header, Hero } from './containers/exportContainers';
+import { Header, Hero, AmortizationSchedule } from './containers/exportContainers';
 
 
 
@@ -15,6 +15,7 @@ function App() {
 
       <LoanCalculatorContextProvider>
         <Hero />
+        <AmortizationSchedule />
       </LoanCalculatorContextProvider>
 
     </div>
