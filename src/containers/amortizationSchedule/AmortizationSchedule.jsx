@@ -5,7 +5,7 @@ import { AmortizationContainerTitle, AmortizationScheduleList } from './componen
 
 const AmortizationSchedule = () => {
 
-    const [showScheduleList, setShowScheduleList] = useState(false);
+    const [showScheduleList, setShowScheduleList] = useState(true);
 
     return (
         <div className="container">

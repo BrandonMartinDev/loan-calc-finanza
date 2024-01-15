@@ -33,8 +33,9 @@
 
 .hide-schedule-button {
 
-    background-color: var(--color-gray-500);
-    color: white;
+    background-color: transparent;
+    color: var(--color-gray-500);
+    border: 1px solid var(--color-gray-500);
 
     padding: .5em 2em;
     border-radius: 6px;
@@ -50,13 +51,17 @@
 }
 
 .hide-schedule-button:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--color-gray-500);
+    color: white;
 }
 
 .schedule-button-show {
-    background-color: var(--color-accent);
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
 }
 
 .schedule-button-show:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
+    color: white;
 }

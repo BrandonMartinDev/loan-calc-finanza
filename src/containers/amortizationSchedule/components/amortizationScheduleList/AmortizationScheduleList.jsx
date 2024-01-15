@@ -9,7 +9,9 @@ const AmortizationScheduleList = ({ showScheduleList }) => {
 
   const { LoanCalc } = useContext(LoanCalculatorContext);
 
-  return showScheduleList && <div>{JSON.stringify(LoanCalc.amortizationSchedule)}</div>
+  return showScheduleList && (
+    <div>{JSON.stringify(LoanCalc.amortizationSchedule)}</div>
+  )
 }
 
 export default AmortizationScheduleList
