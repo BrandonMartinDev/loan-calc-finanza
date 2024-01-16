@@ -1,0 +1,39 @@
+.amortization-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    align-items: center;
+}
+
+.amortization-schedule-header {
+    background-color: black;
+}
+
+.amortization-schedule-header th {
+    
+    padding: .65em 0;
+    color: white;
+    text-align: center;
+
+    font-family: var(--main-ff);
+    font-weight: 300;
+    font-size: 1.25rem;
+
+}
+
+@media (max-width: 850px) {
+    .amortization-schedule-header th {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .amortization-schedule-header th {
+        font-size: .85rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .amortization-schedule-header th {
+        font-size: .65rem;
+    }
+}

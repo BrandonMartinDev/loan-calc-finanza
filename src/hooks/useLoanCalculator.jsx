@@ -101,7 +101,7 @@ class LoanCalculator {
 
     get amortizationSchedule() {
 
-        const monthlyPayment = this.calculatedMonthlyPayment || 0;
+        const monthlyPayment = this.calculatedMonthlyPayment;
 
         let schedule = [];
 
@@ -119,6 +119,7 @@ class LoanCalculator {
             const totalPrincipalPaid = (this.principalMinusDownPayment - newPrincipalBalance);
 
             let monthInfo = {
+                monthNumber: monthNumber,
                 newPrincipalBalance: Number(newPrincipalBalance).toFixed(2),
                 totalPayment: Number(monthlyPayment).toFixed(2),
                 interestPayment: Number(monthlyInterestRateFee).toFixed(2),
