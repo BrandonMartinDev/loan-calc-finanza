@@ -1,8 +1,8 @@
-# React + Vite
+# Finanza
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple, responsive loan calculator app created with Vite + React JS :)
 
-Currently, two official plugins are available:
+It is my first ever official react/vite project I have completed!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- By taking in information like a loan's principal, interest rate, etc. Finanza can calculate the average monthly payment and more!
+- It even features a toggleable amortization schedule that will break down the loan's monthly payments on a month-by-month basis.
