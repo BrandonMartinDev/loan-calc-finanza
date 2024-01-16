@@ -1,0 +1,24 @@
+.amortization-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.amortization-schedule-header {
+    background-color: black;
+}
+
+.amortization-schedule-header tr {
+    border-radius: 6px;
+}
+
+.amortization-schedule-header th {
+    
+    padding: .65em 0;
+    color: white;
+    text-align: center;
+
+    font-family: var(--main-ff);
+    font-weight: 300;
+    font-size: 1.25rem;
+
+}
