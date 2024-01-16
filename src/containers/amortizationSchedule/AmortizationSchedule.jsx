@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './amortizationSchedule.css'
 
-import { AmortizationContainerTitle, AmortizationScheduleList } from './components/componentExports'
+import { AmortizationContainerTitle, AmortizationScheduleTable } from './components/componentExports'
 
 const AmortizationSchedule = () => {
 
@@ -11,7 +11,7 @@ const AmortizationSchedule = () => {
         <div className="container">
 
             <AmortizationContainerTitle showScheduleList={showScheduleList} setShowScheduleList={setShowScheduleList} />
-            <AmortizationScheduleList showScheduleList={showScheduleList} />
+            <AmortizationScheduleTable showScheduleList={showScheduleList} />
 
         </div>
     )

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import './amortizationScheduleList.css'
+import './amortizationScheduleTable.css'
 
 import { useLoanCalculatorContext } from '../../../../hooks/useLoanCalculatorContext';
 const { LoanCalculatorContext } = useLoanCalculatorContext();
