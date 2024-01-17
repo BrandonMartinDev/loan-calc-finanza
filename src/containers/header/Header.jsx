@@ -13,8 +13,8 @@ const Header = () => {
 
             <nav className='header-nav'>
                 <ul>
-                    <li><a className='header-nav-link' target='_blank' href="#">Portfolio</a></li>
-                    <li><a className='header-nav-link' target='_blank' href="#">Mini Projex</a></li>
+                    <li><a className='header-nav-link' href="#">Portfolio</a></li>
+                    <li><a className='header-nav-link' href="#">Mini Projex</a></li>
                     <li><a className='header-nav-link' target='_blank' href="https://github.com/BrandonMartinDev/Finanza-JS">GitHub Repo</a></li>
                 </ul>
             </nav>
