@@ -38,11 +38,11 @@ const InputForm = () => {
         }
 
     }, {
-        principal: 0,
-        termYears: 0,
+        principal: 300000,
+        termYears: 30,
         termMonths: 0,
-        interestRatePercentage: 0,
-        downPaymentPercentage: 0
+        interestRatePercentage: 5.72,
+        downPaymentPercentage: 3.5
     })
 
     function changeFormInputValue(type, payload) {
@@ -70,6 +70,7 @@ const InputForm = () => {
                 labelText="Loan Amount"
                 type="SET_FORM_PRINCIPAL"
                 changeFormInputValue={changeFormInputValue}
+                value={principal}
             />
 
             <div className="double-form-input">
@@ -78,12 +79,14 @@ const InputForm = () => {
                     labelText="Term (Years)"
                     type="SET_FORM_TERM_YEARS"
                     changeFormInputValue={changeFormInputValue}
+                    value={termYears}
                 />
 
                 <InputBox
                     labelText="Term (Months)"
                     type="SET_FORM_TERM_MONTHS"
                     changeFormInputValue={changeFormInputValue}
+                    value={termMonths}
                 />
 
             </div>
@@ -92,6 +95,7 @@ const InputForm = () => {
                 labelText='Interest Rate (%)'
                 type="SET_FORM_INTEREST_RATE"
                 changeFormInputValue={changeFormInputValue}
+                value={interestRatePercentage}
             />
 
             <div className="down-payment-form-input">

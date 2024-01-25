@@ -3,11 +3,11 @@ import { useReducer } from "react"
 // DEFAULT LOAN CALCULATOR VALUES
 
 const defaultValuesObject = {
-    principal: 0,
-    termYears: 0,
+    principal: 300000,
+    termYears: 30,
     termMonths: 0,
-    interestRatePercentage: 0,
-    downPaymentPercentage: 0,
+    interestRatePercentage: 5.72,
+    downPaymentPercentage: 3.5,
 }
 
 class LoanCalculator {
