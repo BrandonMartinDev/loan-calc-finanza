@@ -1,3 +1,12 @@
+# Attention
+
+I have decided to make Finanza a full-blown budgetting webapp. Instead of Finanza just being a loan calculator, my plans for Finanza will be a place for someone to manage personal finances. :)
+
+The assets in this project (like the logo and name) will be kept the same, but the repository name has been changed to "loan-calc-finanza" to differentiate this small project from the bigger web app. If you're wondering why I have 2 Finanza repositories (loan calc and web app), this is why. 
+
+Below is what the original README.md used to say.
+
+
 # Finanza
 
 This project is a simple, responsive loan calculator app created with Vite + React JS :)
