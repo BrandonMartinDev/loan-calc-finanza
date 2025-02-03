@@ -20,7 +20,7 @@ const AmortizationScheduleList = ({ showScheduleList }) => {
           <th className='amortization-schedule-header-text'>Payment</th>
           <th className='amortization-schedule-header-text'>Principal</th>
           <th className='amortization-schedule-header-text'>Interest</th>
-          <th className='amortization-schedule-header-text'>Total Interest</th>
+          <th className='amortization-schedule-header-text'>Principal Paid</th>
           <th className='amortization-schedule-header-text'>Balance</th>
         </tr>
 
